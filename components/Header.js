@@ -1,6 +1,6 @@
 const Header = (props) => {
   return (
-   <nav className="container nav-1 mx-auto flex justify-between items-center">
+   <nav className="container nav-1 mx-auto flex justify-between items-center relative">
           <img alt="" src="/images/logo.png" height="31" width="98" />
 
           <ul className="hidden md:flex">
@@ -11,7 +11,7 @@ const Header = (props) => {
             <li><a className="py-3 px-4 rounded-full blue-2-bg text-white text-[14px]">Get Started</a></li>
           </ul>
 
-          <button className="block md:hidden py-3 px-4 mx-2 rounded focus:outline-none hover:bg-grey-200 group">
+          <button className="block md:hidden py-3 px-4 mx-2 rounded focus:outline-none hover:bg-grey-200 group relative">
               <div className="w-5 h-1 bg-gray-600 mb-1"></div>
               <div className="w-5 h-1 bg-gray-600 mb-1"></div>
               <div className="w-5 h-1 bg-gray-600"></div>

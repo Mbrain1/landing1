@@ -238,7 +238,7 @@ const Dashboard = () => {
                       <div className={`card flex items-center rounded-3xl my-3 ${service > 0 ? 'grey-6-bg' : 'bg-white'} `}>
                           <label htmlFor={service < 2 && 'laundry'} className="cursor-pointer min-w-[20px] h-[20px] rounded border bg-white border-blue-900 flex justify-center items-center"> {service > 0 && <i className="fas fa-check text-[10px] text-blue-900"></i>}</label>
 
-                          <input type="radio"  id="laundry" onChange={(e) => setService(service == 1 ? 0 : 1)}  hidden/>                          
+                          <input type="checkbox"  id="laundry" onChange={(e) => setService(service == 1 ? 0 : 1)}  hidden/>                          
                           <div className="ml-4">
                               <h3 className={`font-semibold ${service > 0 && 'blue-2'}`}>Laundry</h3>
                               <p>Lorem ipsum dolor sit amet, consec adipiscing elit.</p>
@@ -248,7 +248,7 @@ const Dashboard = () => {
                        <div className={`card flex items-center rounded-3xl my-3 ${service > 1 ? 'grey-6-bg' : 'bg-white'} `}>
                           <label htmlFor={service > 0 && service < 3 && 'home-cleaning'} className="cursor-pointer min-w-[20px] h-[20px] rounded border bg-white border-blue-900 flex justify-center items-center"> {service > 1 && <i className="fas fa-check text-[10px] text-blue-900"></i>}</label>
 
-                          <input type="radio"  id="home-cleaning" onChange={(e) => setService(service == 2 ? 1 : 2)}  hidden/> 
+                          <input type="checkbox"  id="home-cleaning" onChange={(e) => setService(service == 2 ? 1 : 2)}  hidden/> 
 
                           <div className="ml-4">
                               <h3 className={`font-semibold ${service > 1 && 'blue-2'}`}>Home Cleaning</h3>
@@ -259,7 +259,7 @@ const Dashboard = () => {
                         <div className={`card flex items-center rounded-3xl my-3 ${service > 2 ? 'grey-6-bg' : 'bg-white'} `}>
                           <label htmlFor={service > 1  && 'errand'} className="cursor-pointer min-w-[20px] h-[20px] rounded border bg-white border-blue-900 flex justify-center items-center"> {service > 2 && <i className="fas fa-check text-[10px] text-blue-900"></i>}</label>
 
-                          <input type="radio"  id="errand" onChange={(e) => {setService(service == 3 ? 2 : 3); setStatus(service == 3 ? {percentage:0,status:false} : {percentage:50,status:!status.status})}}  hidden/> 
+                          <input type="checkbox"  id="errand" onChange={(e) => {setService(service == 3 ? 2 : 3); setStatus(service == 3 ? {percentage:0,status:false} : {percentage:50,status:!status.status})}}  hidden/> 
 
                           <div className="ml-4">
                               <h3 className={`font-semibold ${service > 2 && 'blue-2'}`}>Errand {page}</h3>

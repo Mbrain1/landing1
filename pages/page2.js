@@ -213,7 +213,7 @@ standout with top notch <br />
 
 
 
-    <form className="my-12 py-12 grey-3-bg">
+     <form className="my-12 py-12 grey-3-bg">
         <div className="container mx-auto  py-5 rounded-3xl relative grid grid-cols-1 md:grid-cols-2 md:gap-x-10">
 
               <div>
@@ -239,7 +239,7 @@ standout with top notch <br />
                       <div className={`card flex items-center rounded-3xl my-3 ${service > 0 ? 'grey-6-bg' : 'bg-white'} `}>
                           <label htmlFor={service < 2 && 'laundry'} className="cursor-pointer min-w-[20px] h-[20px] rounded border bg-white border-blue-900 flex justify-center items-center"> {service > 0 && <i className="fas fa-check text-[10px] text-blue-900"></i>}</label>
 
-                          <input type="checkbox"  id="laundry" onChange={(e) => setService(service == 1 ? 0 : 1)}  hidden/>                          
+                          <input type="checkbox"  id="laundry" onChange={(e) => {setService(service == 1 ? 0 : 1);setStatus(service == 1 ? {percentage:0,status:false} : {percentage:50,status:true})}}  hidden/>                          
                           <div className="ml-4">
                               <h3 className={`font-semibold ${service > 0 && 'blue-2'}`}>Laundry</h3>
                               <p>Lorem ipsum dolor sit amet, consec adipiscing elit.</p>
@@ -249,7 +249,7 @@ standout with top notch <br />
                        <div className={`card flex items-center rounded-3xl my-3 ${service > 1 ? 'grey-6-bg' : 'bg-white'} `}>
                           <label htmlFor={service > 0 && service < 3 && 'home-cleaning'} className="cursor-pointer min-w-[20px] h-[20px] rounded border bg-white border-blue-900 flex justify-center items-center"> {service > 1 && <i className="fas fa-check text-[10px] text-blue-900"></i>}</label>
 
-                          <input type="checkbox"  id="home-cleaning" onChange={(e) => setService(service == 2 ? 1 : 2)}  hidden/> 
+                          <input type="checkbox"  id="home-cleaning" onChange={(e) => {setService(service == 2 ? 1 : 2);setStatus({percentage:50,status:true})} }  hidden/> 
 
                           <div className="ml-4">
                               <h3 className={`font-semibold ${service > 1 && 'blue-2'}`}>Home Cleaning</h3>

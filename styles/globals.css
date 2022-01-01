@@ -3,11 +3,10 @@
 @tailwind utilities;
 
 
-body,html {
+body {
     overflow-y: scroll;
-    width: 100%;
-    max-width: 100%;
     overflow-x: hidden;
+    position: relative;
 }
 
 .btn {

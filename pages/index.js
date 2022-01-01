@@ -3,7 +3,7 @@ import Header from "/components/Header";
 
 const Dashboard = () => {
   return (
-    <div style={{overflow: 'hidden',width:"100vw",height:"100%"}}>
+    <>
    
  <section className="pbc py-12">
 
@@ -306,7 +306,7 @@ const Dashboard = () => {
         </div>
     </section>
     <Footer />
-  </div>
+  </>
   )
 };
 

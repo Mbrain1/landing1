@@ -213,7 +213,7 @@ standout with top notch <br />
 
 
 
-    <section className="my-12 py-12 grey-3-bg">
+    <form className="my-12 py-12 grey-3-bg">
         <div className="container mx-auto  py-5 rounded-3xl relative grid grid-cols-1 md:grid-cols-2 md:gap-x-10">
 
               <div>
@@ -232,12 +232,12 @@ standout with top notch <br />
                       <div className={`rounded-full w-7 h-7 blue-2-bg absolute -top-[12px]`} style={{left:`${status.percentage}%`}}></div>
                   </div>
 
-                  <form className="mt-5">
+                  <div className="mt-5">
                       <p className="font-semibold my-3">Select preferred service</p>
 
                       {page == 1 ? <>
                       <div className={`card flex items-center rounded-3xl my-3 ${service > 0 ? 'grey-6-bg' : 'bg-white'} `}>
-                          <label htmlFor={service < 2 && 'laundry'} className="cursor-pointer w-6 h-6 rounded border bg-white border-blue-900 flex justify-center items-center"> {service > 0 && <i className="fas fa-check text-[10px] text-blue-900"></i>}</label>
+                          <label htmlFor={service < 2 && 'laundry'} className="cursor-pointer min-w-[20px] h-[20px] rounded border bg-white border-blue-900 flex justify-center items-center"> {service > 0 && <i className="fas fa-check text-[10px] text-blue-900"></i>}</label>
 
                           <input type="radio"  id="laundry" onChange={(e) => setService(service == 1 ? 0 : 1)}  hidden/>                          
                           <div className="ml-4">
@@ -247,7 +247,7 @@ standout with top notch <br />
                       </div>
 
                        <div className={`card flex items-center rounded-3xl my-3 ${service > 1 ? 'grey-6-bg' : 'bg-white'} `}>
-                          <label htmlFor={service > 0 && service < 3 && 'home-cleaning'} className="cursor-pointer w-6 h-6 rounded border bg-white border-blue-900 flex justify-center items-center"> {service > 1 && <i className="fas fa-check text-[10px] text-blue-900"></i>}</label>
+                          <label htmlFor={service > 0 && service < 3 && 'home-cleaning'} className="cursor-pointer min-w-[20px] h-[20px] rounded border bg-white border-blue-900 flex justify-center items-center"> {service > 1 && <i className="fas fa-check text-[10px] text-blue-900"></i>}</label>
 
                           <input type="radio"  id="home-cleaning" onChange={(e) => setService(service == 2 ? 1 : 2)}  hidden/> 
 
@@ -258,7 +258,7 @@ standout with top notch <br />
                       </div>
 
                         <div className={`card flex items-center rounded-3xl my-3 ${service > 2 ? 'grey-6-bg' : 'bg-white'} `}>
-                          <label htmlFor={service > 1  && 'errand'} className="cursor-pointer w-6 h-6 rounded border bg-white border-blue-900 flex justify-center items-center"> {service > 2 && <i className="fas fa-check text-[10px] text-blue-900"></i>}</label>
+                          <label htmlFor={service > 1  && 'errand'} className="cursor-pointer min-w-[20px] h-[20px] rounded border bg-white border-blue-900 flex justify-center items-center"> {service > 2 && <i className="fas fa-check text-[10px] text-blue-900"></i>}</label>
 
                           <input type="radio"  id="errand" onChange={(e) => {setService(service == 3 ? 2 : 3); setStatus(service == 3 ? {percentage:0,status:false} : {percentage:50,status:!status.status})}}  hidden/> 
 
@@ -278,17 +278,9 @@ standout with top notch <br />
                         }
 
                       
-                      <div className={`flex  ${page > 1 ? 'justify-between' : 'justify-end'}`}>
-
-                        {page > 1 && <button type="button" className="blue-2-bg text-white rounded py-2 px-6" onClick={() => {setPage(--page); setStatus({percentage:50,status:true})}}>Back</button>}
-
-                        {status.status == true &&
-                          <button type="button" className="blue-2-bg text-white rounded py-2 px-6 " onClick={() => {setPage(++page); setStatus({...status,status:!status.status})}}>{page == 1 ? 'Next' : 'Finish'}</button>}
-
-                      </div>
 
 
-                  </form>
+                  </div>
               </div>
 
 
@@ -357,8 +349,21 @@ standout with top notch <br />
                   </div>
 
 
+
+                     
+                    <div className={`col-span-1 md:col-span-2 flex  ${page > 1 ? 'justify-between' : 'justify-end'} my-5`}>
+
+                        {page > 1 && <button type="button" className="blue-2-bg text-white rounded py-2 px-6" onClick={() => {setPage(--page); setStatus({percentage:50,status:true})}}>Back</button>}
+
+                        {status.status == true &&
+                          <button type="button" className="blue-2-bg text-white rounded py-2 px-6 " onClick={() => {setPage(++page); setStatus({...status,status:!status.status})}}>{page == 1 ? 'Next' : 'Finish'}</button>}
+
+                      </div>
+
         </div>
-    </section>
+
+
+    </form>
     <Footer />
   </div>
   )

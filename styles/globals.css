@@ -5,7 +5,6 @@
 
 body {
     overflow-y: scroll;
-    /*overflow-x: hidden;*/
 }
 
 .btn {
@@ -157,3 +156,4 @@ form .form-control {
 form .form-control:focus {
     @apply outline-0;
 } 
+

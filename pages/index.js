@@ -1,7 +1,11 @@
+import {useState} from "react";
 import Footer from "/components/Footer";
 import Header from "/components/Header";
 
 const Dashboard = () => {
+
+ const [faqShow,setFaqShow] = useState(1);
+
   return (
     <div className="relative overflow-hidden">
    
@@ -222,9 +226,9 @@ const Dashboard = () => {
 
                 <div>
                     <p className="item">
-                        <div className="flex justify-between border-b border-gray-200 items-center py-3"><h3 className="font-semibold ac text-[24px] ">How to call Kara</h3>  <img alt="" src="/images/plus.png" width="31" height="31" /></div>
+                        <div className="flex justify-between border-b border-gray-200 items-center py-3  cursor-pointer"><h3 className="font-semibold ac text-[24px] " >How to call Kara</h3>  <img alt="" src={faqShow == 1 ? `/images/minus.png` : `/images/plus.png`} width="31" height="31"  onClick={(e) => setFaqShow(faqShow == 1 ? 0 : 1)} /></div>
 
-                        <div className="py-4">Contrary to popular belief, Lorem Ipsum is not simply random text.
+                        <div className={`py-4  ${faqShow == 1 ? 'block' : 'hidden'}`}>Contrary to popular belief, Lorem Ipsum is not simply random text.
                             It has roots in a piece of classical Latin literature from 45 BC,
                             making it over 2000 years old. Richard McClintock, a Latin professor
                             at Hampden-Sydney College in Virginia, looked up one of the more
@@ -234,27 +238,67 @@ const Dashboard = () => {
                     </p>
 
                      <p className="item">
-                        <div className="flex justify-between border-b border-gray-200 items-center py-3"><h3 className="font-semibold ac text-[24px] ">How to earn points</h3>  <img alt="" src="/images/plus.png" width="31" height="31" /></div>
+                        <div className="flex justify-between border-b border-gray-200 items-center py-3 cursor-pointer"><h3 className="font-semibold ac text-[24px] " >How to earn points</h3>  <img alt="" src={faqShow == 2 ? `/images/minus.png` : `/images/plus.png`} width="31" height="31" onClick={() => setFaqShow(faqShow == 2 ? 0 : 2)} /></div>
+
+                        <div className={`py-4  ${faqShow == 2 ? 'block' : 'hidden'}`}>Contrary to popular belief, Lorem Ipsum is not simply random text.
+                            It has roots in a piece of classical Latin literature from 45 BC,
+                            making it over 2000 years old. Richard McClintock, a Latin professor
+                            at Hampden-Sydney College in Virginia, looked up one of the more
+                            obscure Latin words, consectetur, from a Lorem Ipsum passage,
+                            and going through the cites of the word in classical literature,
+                            discovered the undoubtable source.</div>
                     </p>
 
 
                      <p className="item">
-                        <div className="flex justify-between border-b border-gray-200 items-center py-3"><h3 className="font-semibold ac text-[24px] ">Is Kara available in my region?</h3>  <img alt="" src="/images/plus.png" width="31" height="31" /></div>
+                        <div className="flex justify-between border-b border-gray-200 items-center py-3 cursor-pointer"><h3 className="font-semibold ac text-[24px] " >Is Kara available in my region?</h3>  <img alt="" src={faqShow == 3 ? `/images/minus.png` : `/images/plus.png`} width="31" height="31" onClick={() => setFaqShow(faqShow == 3 ? 0 : 3)} /></div>
+
+                        <div className={`py-4  ${faqShow == 3 ? 'block' : 'hidden'}`}>Contrary to popular belief, Lorem Ipsum is not simply random text.
+                            It has roots in a piece of classical Latin literature from 45 BC,
+                            making it over 2000 years old. Richard McClintock, a Latin professor
+                            at Hampden-Sydney College in Virginia, looked up one of the more
+                            obscure Latin words, consectetur, from a Lorem Ipsum passage,
+                            and going through the cites of the word in classical literature,
+                            discovered the undoubtable source.</div>
                     </p>
 
 
                      <p className="item">
-                        <div className="flex justify-between border-b border-gray-200 items-center py-3"><h3 className="font-semibold ac text-[24px] ">Is Kara available in my region?</h3>  <img alt="" src="/images/plus.png" width="31" height="31" /></div>
+                        <div className="flex justify-between border-b border-gray-200 items-center py-3 cursor-pointer"><h3 className="font-semibold ac text-[24px] " >Is Kara available in my region?</h3>  <img alt="" src={faqShow == 4 ? `/images/minus.png` : `/images/plus.png`} width="31" height="31" onClick={() => setFaqShow(faqShow == 4 ? 0 : 4)} /></div>
+
+                        <div className={`py-4  ${faqShow == 4 ? 'block' : 'hidden'}`}>Contrary to popular belief, Lorem Ipsum is not simply random text.
+                            It has roots in a piece of classical Latin literature from 45 BC,
+                            making it over 2000 years old. Richard McClintock, a Latin professor
+                            at Hampden-Sydney College in Virginia, looked up one of the more
+                            obscure Latin words, consectetur, from a Lorem Ipsum passage,
+                            and going through the cites of the word in classical literature,
+                            discovered the undoubtable source.</div>
                     </p>
 
 
 
                      <p className="item">
-                        <div className="flex justify-between border-b border-gray-200 items-center py-3"><h3 className="font-semibold ac text-[24px] ">Earn points</h3>  <img alt="" src="/images/plus.png" width="31" height="31" /></div>
+                        <div className="flex justify-between border-b border-gray-200 items-center py-3 cursor-pointer" ><h3 className="font-semibold ac text-[24px] ">Earn points</h3>  <img alt="" src={faqShow == 5 ? `/images/minus.png` : `/images/plus.png`} width="31" height="31" onClick={() => setFaqShow(faqShow == 5 ? 0 : 5)} /></div>
+
+                        <div className={`py-4  ${faqShow == 5 ? 'block' : 'hidden'}`}>Contrary to popular belief, Lorem Ipsum is not simply random text.
+                            It has roots in a piece of classical Latin literature from 45 BC,
+                            making it over 2000 years old. Richard McClintock, a Latin professor
+                            at Hampden-Sydney College in Virginia, looked up one of the more
+                            obscure Latin words, consectetur, from a Lorem Ipsum passage,
+                            and going through the cites of the word in classical literature,
+                            discovered the undoubtable source.</div>
                     </p>
 
                      <p className="item">
-                        <div className="flex justify-between border-b border-gray-200 items-center py-3"><h3 className="font-semibold ac text-[24px] ">Support</h3>  <img alt="" src="/images/plus.png" width="31" height="31" /></div>
+                        <div className="flex justify-between border-b border-gray-200 items-center py-3 cursor-pointer" ><h3 className="font-semibold ac text-[24px] ">Support</h3>  <img alt="" src={faqShow == 6 ? `/images/minus.png` : `/images/plus.png`} width="31" height="31" onClick={() => setFaqShow(faqShow == 6 ? 0 : 6)} /></div>
+
+                        <div className={`py-4  ${faqShow == 6 ? 'block' : 'hidden'}`}>Contrary to popular belief, Lorem Ipsum is not simply random text.
+                            It has roots in a piece of classical Latin literature from 45 BC,
+                            making it over 2000 years old. Richard McClintock, a Latin professor
+                            at Hampden-Sydney College in Virginia, looked up one of the more
+                            obscure Latin words, consectetur, from a Lorem Ipsum passage,
+                            and going through the cites of the word in classical literature,
+                            discovered the undoubtable source.</div>
                     </p>
 
 

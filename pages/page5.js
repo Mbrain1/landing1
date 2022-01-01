@@ -60,7 +60,7 @@ our <span className="inline-block relative leading-none" style={{color:"rgba(248
                   <div className="mt-5 relative">
                       <div className="w-full h-1 bg-gray-200 "></div>
 
-                      <div className={`w-full h-1 blue-2-bg   w-[${status.percentage}%] absolute top-0`}></div>
+                      <div className={`w-full h-1 blue-2-bg absolute top-0`} style={{width:`${status.percentage}%`}}></div>
 
                       <div className={`rounded-full w-7 h-7 blue-2-bg absolute -top-[12px]`} style={{left:`${status.percentage}%`}}></div>
                   </div>
@@ -70,7 +70,7 @@ our <span className="inline-block relative leading-none" style={{color:"rgba(248
 
                       {page == 1 ? <>
                       <div className={`card flex items-center rounded-3xl my-3 ${service > 0 ? 'grey-6-bg' : 'bg-white'} `}>
-                          <label for={service < 2 && 'laundry'} className="cursor-pointer w-6 h-6 rounded border bg-white border-blue-900 flex justify-center items-center"> {service > 0 && <i className="fas fa-check text-[10px] text-blue-900"></i>}</label>
+                          <label htmlFor={service < 2 && 'laundry'} className="cursor-pointer w-6 h-6 rounded border bg-white border-blue-900 flex justify-center items-center"> {service > 0 && <i className="fas fa-check text-[10px] text-blue-900"></i>}</label>
 
                           <input type="checkbox"  id="laundry" onChange={(e) => setService(service == 1 ? 0 : 1)}  hidden/>                          
                           <div className="ml-4">
@@ -80,7 +80,7 @@ our <span className="inline-block relative leading-none" style={{color:"rgba(248
                       </div>
 
                        <div className={`card flex items-center rounded-3xl my-3 ${service > 1 ? 'grey-6-bg' : 'bg-white'} `}>
-                          <label for={service > 0 && service < 3 && 'home-cleaning'} className="cursor-pointer w-6 h-6 rounded border bg-white border-blue-900 flex justify-center items-center"> {service > 1 && <i className="fas fa-check text-[10px] text-blue-900"></i>}</label>
+                          <label htmlFor={service > 0 && service < 3 && 'home-cleaning'} className="cursor-pointer w-6 h-6 rounded border bg-white border-blue-900 flex justify-center items-center"> {service > 1 && <i className="fas fa-check text-[10px] text-blue-900"></i>}</label>
 
                           <input type="checkbox"  id="home-cleaning" onChange={(e) => setService(service == 2 ? 1 : 2)}  hidden/> 
 
@@ -91,7 +91,7 @@ our <span className="inline-block relative leading-none" style={{color:"rgba(248
                       </div>
 
                         <div className={`card flex items-center rounded-3xl my-3 ${service > 2 ? 'grey-6-bg' : 'bg-white'} `}>
-                          <label for={service > 1  && 'errand'} className="cursor-pointer w-6 h-6 rounded border bg-white border-blue-900 flex justify-center items-center"> {service > 2 && <i className="fas fa-check text-[10px] text-blue-900"></i>}</label>
+                          <label htmlFor={service > 1  && 'errand'} className="cursor-pointer w-6 h-6 rounded border bg-white border-blue-900 flex justify-center items-center"> {service > 2 && <i className="fas fa-check text-[10px] text-blue-900"></i>}</label>
 
                           <input type="checkbox"  id="errand" onChange={(e) => {setService(service == 3 ? 2 : 3); setStatus(service == 3 ? {percentage:0,status:false} : {percentage:50,status:!status.status})}}  hidden/> 
 

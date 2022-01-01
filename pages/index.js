@@ -3,7 +3,7 @@ import Header from "/components/Header";
 
 const Dashboard = () => {
   return (
-    <>
+    <div style={{overflow: 'hidden',width:"100vw",height:"100%"}}>
    
  <section className="pbc py-12">
 
@@ -11,7 +11,7 @@ const Dashboard = () => {
 
          <div className="container mx-auto py-5 mt-10">
 
-               <h1 className="text-center font-bold blue-2 leading-tight" style={{fontSize:"max(40px,4.5vw)"}}>Focus on the <br/> things you <span className="text-red-200 inline-block relative leading-none">love <img alt="" src="/images/arrow-right.png" height="13" width="124" /></span> <br /> while we do the restt</h1>
+               <h1 className="text-center font-bold blue-2 leading-tight" style={{fontSize:"max(40px,4.5vw)"}}>Focus on the <br/> things you <span className="text-red-200 inline-block relative leading-none">love <img alt="" src="/images/arrow-right.png" height="13" width="124" /></span> <br /> while we do the rest</h1>
 
                <div className="blue-2  flex items-center justify-center my-2"><span className="mx-2">Laundry</span> <span className="text-[30px]">&bull;</span> <span className="mx-2">Errands</span> <span className="text-[30px]">&bull;</span> <span className="mx-2">House Cleaning</span> </div>
 
@@ -306,7 +306,7 @@ const Dashboard = () => {
         </div>
     </section>
     <Footer />
-  </>
+  </div>
   )
 };
 

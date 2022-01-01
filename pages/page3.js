@@ -3,7 +3,7 @@ import Header from "/components/Header";
 
 const Dashboard = () => {
   return (
-    <>
+   <div className="relative overflow-hidden">
    
  <section className="why-us py-12">
 
@@ -305,7 +305,7 @@ to run  <span className="inline-block relative leading-none" style={{color:"rgba
         </div>
     </section>
     <Footer />
-  </>
+  </div>
   )
 };
 

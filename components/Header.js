@@ -1,6 +1,6 @@
 const Header = (props) => {
   return (
-   <nav className="container nav-1 mx-auto flex justify-between items-center relative">
+   <nav className="container nav-1 mx-auto flex justify-between items-center ">
           <img alt="" src="/images/logo.png" height="31" width="98" />
 
           <ul className="hidden md:flex">

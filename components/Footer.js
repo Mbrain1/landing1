@@ -7,14 +7,14 @@ const Footer = (props) => {
           <div className="col-span-2 md:col-span-1 ">
             <img src="/images/logo.png" height="31" width="98" className="mx-auto" />
           </div>
-          <div className=" ">
+          <div className="text-center md:text-left">
               <p className="mb-3 ac font-semibold">Company</p>
               <div className="mb-2"><a href="#">About Keykara</a></div>
               <div className="mb-2"><a href="#">Companies</a></div>
               <div className="mb-2"><a href="#">Pricing</a></div>
           </div>
 
-          <div className=" ">
+          <div className="text-center md:text-left">
               <p className="mb-3 ac font-semibold">Services</p>
               <div className="mb-2"><a href="#">Food</a></div>
               <div className="mb-2"><a href="#">Cleaning</a></div>
@@ -23,7 +23,7 @@ const Footer = (props) => {
               <div className="mb-2"><a href="#">Errands</a></div>
           </div>
 
-          <div className=" ">
+          <div className="text-center md:text-left">
               <p className="mb-3 ac font-semibold">Others</p>
               <div className="mb-2"><a href="#">FAQs</a></div>
               <div className="mb-2"><a href="#">Blog</a></div>

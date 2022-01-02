@@ -20,10 +20,10 @@ const Dashboard = () => {
                <div className="blue-2  flex items-center justify-center my-2"><span className="mx-2">Laundry</span> <span className="text-[30px]">&bull;</span> <span className="mx-2">Errands</span> <span className="text-[30px]">&bull;</span> <span className="mx-2">House Cleaning</span> </div>
 
 
-                <div className="flex items-center justify-center my-2">
-                  <button className="py-3 px-4 rounded-full blue-2-bg text-white mx-2">Make Life Easy For Me</button>
+                <div className="flex flex-col md:flex-row items-center justify-center my-2">
+                  <button className="py-3 px-4 rounded-full blue-2-bg text-white mx-2 my-1 " >Make Life Easy For Me</button>
 
-                  <button className="py-3 px-4 rounded-full bg-white border border-red-200  text-red-200 mx-2 flex justify-between items-center"><span className="mr-3">Watch Demo</span> <img alt="" src="/images/play.png" /></button>
+                  <button className="py-3 my-1 px-4 rounded-full  bg-white border border-red-200  text-red-200 mx-2 flex justify-between items-center"><span className="mr-3">Watch Demo</span> <img alt="" src="/images/play.png" /></button>
 
                 </div>
 
@@ -44,7 +44,7 @@ const Dashboard = () => {
 
 
 
-                 <div className="card  bg-red-100 text-center shadow-xl">
+                 <div className="card  bg-red-100 text-center shadow">
                     <div className="absolute -top-1/4 -left-1 flex justify-center  w-full">
                        <img alt="" className="rounded-full  service" src="/images/group3.png" height="148" width="98" />
                     </div>
@@ -65,7 +65,7 @@ const Dashboard = () => {
 
                  
 
-            <div className="card  bg-white text-center shadow-xl">
+            <div className="card  bg-white text-center shadow">
                     <div className="absolute -top-1/4 -left-1 flex justify-center  w-full">
                        <img alt="" className="rounded-full  service" src="/images/group3.png" height="148" width="98" />
                     </div>
@@ -84,7 +84,7 @@ const Dashboard = () => {
                 </div>
 
 
-                <div className="card  bg-white text-center shadow-xl">
+                <div className="card  bg-white text-center shadow">
                     <div className="absolute -top-1/4 -left-1 flex justify-center  w-full">
                        <img alt="" className="rounded-full  service" src="/images/group3.png" height="148" width="98" />
                     </div>
@@ -226,7 +226,7 @@ const Dashboard = () => {
 
                 <div>
                     <p className="item">
-                        <div className="flex justify-between border-b border-gray-200 items-center py-3  cursor-pointer"><h3 className="font-semibold ac text-[24px] " >How to call Kara</h3>  <img alt="" src={faqShow == 1 ? `/images/minus.png` : `/images/plus.png`} width="31" height="31"  onClick={(e) => setFaqShow(faqShow == 1 ? 0 : 1)} /></div>
+                        <div className="flex justify-between border-b border-gray-200 items-center py-3  cursor-pointer"><h3 className="font-semibold ac text-[24px] " >How to call Kara</h3>  <div  className="rounded-full border border-blue-900 flex justify-center items-center w-8 h-8   blue-2 text-[20px]" style={{fontWeight:'300'}}  onClick={(e) => setFaqShow(faqShow == 1 ? 0 : 1)} >{faqShow == 1 ? `-` : `+`}</div></div>
 
                         <div className={`py-4  ${faqShow == 1 ? 'block' : 'hidden'}`}>Contrary to popular belief, Lorem Ipsum is not simply random text.
                             It has roots in a piece of classical Latin literature from 45 BC,
@@ -238,7 +238,7 @@ const Dashboard = () => {
                     </p>
 
                      <p className="item">
-                        <div className="flex justify-between border-b border-gray-200 items-center py-3 cursor-pointer"><h3 className="font-semibold ac text-[24px] " >How to earn points</h3>  <img alt="" src={faqShow == 2 ? `/images/minus.png` : `/images/plus.png`} width="31" height="31" onClick={() => setFaqShow(faqShow == 2 ? 0 : 2)} /></div>
+                        <div className="flex justify-between border-b border-gray-200 items-center py-3 cursor-pointer"><h3 className="font-semibold ac text-[24px] " >How to earn points</h3>  <div  className="rounded-full border border-blue-900 flex justify-center items-center w-8 h-8   blue-2 text-[20px]" style={{fontWeight:'300'}}  onClick={(e) => setFaqShow(faqShow == 2 ? 0 : 2)} >{faqShow == 2 ? `-` : `+`}</div></div>
 
                         <div className={`py-4  ${faqShow == 2 ? 'block' : 'hidden'}`}>Contrary to popular belief, Lorem Ipsum is not simply random text.
                             It has roots in a piece of classical Latin literature from 45 BC,
@@ -251,7 +251,7 @@ const Dashboard = () => {
 
 
                      <p className="item">
-                        <div className="flex justify-between border-b border-gray-200 items-center py-3 cursor-pointer"><h3 className="font-semibold ac text-[24px] " >Is Kara available in my region?</h3>  <img alt="" src={faqShow == 3 ? `/images/minus.png` : `/images/plus.png`} width="31" height="31" onClick={() => setFaqShow(faqShow == 3 ? 0 : 3)} /></div>
+                        <div className="flex justify-between border-b border-gray-200 items-center py-3 cursor-pointer"><h3 className="font-semibold ac text-[24px] " >Is Kara available in my region?</h3>  <div  className="rounded-full border border-blue-900 flex justify-center items-center w-8 h-8   blue-2 text-[20px]" style={{fontWeight:'300'}}  onClick={(e) => setFaqShow(faqShow == 3 ? 0 : 3)} >{faqShow == 3 ? `-` : `+`}</div></div>
 
                         <div className={`py-4  ${faqShow == 3 ? 'block' : 'hidden'}`}>Contrary to popular belief, Lorem Ipsum is not simply random text.
                             It has roots in a piece of classical Latin literature from 45 BC,
@@ -264,7 +264,7 @@ const Dashboard = () => {
 
 
                      <p className="item">
-                        <div className="flex justify-between border-b border-gray-200 items-center py-3 cursor-pointer"><h3 className="font-semibold ac text-[24px] " >Is Kara available in my region?</h3>  <img alt="" src={faqShow == 4 ? `/images/minus.png` : `/images/plus.png`} width="31" height="31" onClick={() => setFaqShow(faqShow == 4 ? 0 : 4)} /></div>
+                        <div className="flex justify-between border-b border-gray-200 items-center py-3 cursor-pointer"><h3 className="font-semibold ac text-[24px] " >Is Kara available in my region?</h3>  <div  className="rounded-full border border-blue-900 flex justify-center items-center w-8 h-8   blue-2 text-[20px]" style={{fontWeight:'300'}}  onClick={(e) => setFaqShow(faqShow == 4 ? 0 : 4)} >{faqShow == 4 ? `-` : `+`}</div></div>
 
                         <div className={`py-4  ${faqShow == 4 ? 'block' : 'hidden'}`}>Contrary to popular belief, Lorem Ipsum is not simply random text.
                             It has roots in a piece of classical Latin literature from 45 BC,
@@ -278,7 +278,7 @@ const Dashboard = () => {
 
 
                      <p className="item">
-                        <div className="flex justify-between border-b border-gray-200 items-center py-3 cursor-pointer" ><h3 className="font-semibold ac text-[24px] ">Earn points</h3>  <img alt="" src={faqShow == 5 ? `/images/minus.png` : `/images/plus.png`} width="31" height="31" onClick={() => setFaqShow(faqShow == 5 ? 0 : 5)} /></div>
+                        <div className="flex justify-between border-b border-gray-200 items-center py-3 cursor-pointer" ><h3 className="font-semibold ac text-[24px] ">Earn points</h3>  <div  className="rounded-full border border-blue-900 flex justify-center items-center w-8 h-8   blue-2 text-[20px]" style={{fontWeight:'300'}}  onClick={(e) => setFaqShow(faqShow == 5 ? 0 : 5)} >{faqShow == 5 ? `-` : `+`}</div></div>
 
                         <div className={`py-4  ${faqShow == 5 ? 'block' : 'hidden'}`}>Contrary to popular belief, Lorem Ipsum is not simply random text.
                             It has roots in a piece of classical Latin literature from 45 BC,
@@ -290,7 +290,7 @@ const Dashboard = () => {
                     </p>
 
                      <p className="item">
-                        <div className="flex justify-between border-b border-gray-200 items-center py-3 cursor-pointer" ><h3 className="font-semibold ac text-[24px] ">Support</h3>  <img alt="" src={faqShow == 6 ? `/images/minus.png` : `/images/plus.png`} width="31" height="31" onClick={() => setFaqShow(faqShow == 6 ? 0 : 6)} /></div>
+                        <div className="flex justify-between border-b border-gray-200 items-center py-3 cursor-pointer" ><h3 className="font-semibold ac text-[24px] ">Support</h3>  <div  className="rounded-full border border-blue-900 px-2  blue-2 text-[20px]" style={{fontWeight:'300'}}  onClick={(e) => setFaqShow(faqShow == 6 ? 0 : 6)} >{faqShow == 6 ? `-` : `+`}</div></div>
 
                         <div className={`py-4  ${faqShow == 6 ? 'block' : 'hidden'}`}>Contrary to popular belief, Lorem Ipsum is not simply random text.
                             It has roots in a piece of classical Latin literature from 45 BC,
@@ -317,26 +317,26 @@ const Dashboard = () => {
               </div>
 
 
-              <div className="block md:flex mx-auto w-full sm:10/12 md:w-7/12 my-10">
-                  <div className="mx-5"
+              <div className="block md:flex mx-auto w-full md:w-7/12 my-10">
+                  <div className="md:mx-5"
                   >
-                      <img alt="" src="/images/group1-2.png" className="mx-auto" height="317" width="238" />
+                      <img alt="" src="/images/group1-2.png" className="mx-auto w-full" height="317" />
                   </div>
 
-                  <div className="mx-5">
+                  <div className="md:mx-5">
                       <p>
-                        <h2 className="blue-1 text-[24px] font-semibold mb-2">Quality Service</h2>
+                        <h2 className="blue-1 text-[24px] font-semibold my-1">Quality Service</h2>
                         <div>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical </div>
                       </p>
 
                        <p>
-                        <h2 className="blue-1 text-[24px] font-semibold mb-2">Service at it’s best</h2>
+                        <h2 className="blue-1 text-[24px] font-semibold my-1">Service at it’s best</h2>
                         <div>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical </div>
                       </p>
 
 
                        <p>
-                        <h2 className="blue-1 text-[24px] font-semibold mb-2">Reliabilty</h2>
+                        <h2 className="blue-1 text-[24px] font-semibold my-1">Reliabilty</h2>
                         <div>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical  </div>
                       </p>
 

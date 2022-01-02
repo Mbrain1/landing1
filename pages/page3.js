@@ -165,15 +165,15 @@ to run  <span className="inline-block relative leading-none" style={{color:"rgba
                      
                      <div className="md:w-5/6 ml-auto mt-10">
 
-                    <h2 className="text-blue-400 relative text-[42px] font-semibold leading-tight">Let us know where<br /> to find you <span className="text-blue-400 text-[50px] relative top-4">&bull;</span>
+                    <h2 className="text-blue-400 relative text-[42px] font-semibold leading-tight text-center">Let us know where<br /> to find you <span className="text-blue-400 text-[50px] relative top-4">&bull;</span>
 
-                      <div className="absolute rounded-full bg-blue-400 w-10 h-10 -top-10 -left-5"></div>
+                      <div className="absolute rounded-full bg-blue-400 w-10 h-10 -top-10 left-5 md:-left-5"></div>
                       </h2>
 
                       <img alt="" src="/images/group111.png" className="absolute bottom-0 right-0"  style={{width: "max(50px,10vw)"}} />
 
 
-                    <div className="grid grid-cols-2">
+                     <div className="w-3/4 md:w-full mx-auto md:grid md:grid-cols-2">
                         <div className="card">
                      <p className="text-[12px] mb-2">
                         There are many variations of passages of lorem Ipsum
@@ -195,7 +195,7 @@ to run  <span className="inline-block relative leading-none" style={{color:"rgba
 
                 <div>
                     
-                    <form className="bg-white rounded py-4 mx-5 px-5 my-12">
+                    <form className="bg-white rounded py-4 md:mx-5 px-5 my-12">
                         <div className="form-group">
                             <input type="text" className="form-control bg-blue-50 border-0" placeholder="Full name" />
                         </div>

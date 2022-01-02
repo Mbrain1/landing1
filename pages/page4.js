@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useState,useEffect} from "react";
 import Footer from "/components/Footer";
 import Header from "/components/Header";
 
@@ -7,6 +7,18 @@ const Dashboard = () => {
   const [service,setService] = useState(0);
   const [status,setStatus] = useState({status:false,percentage:0});
   const [page,setPage] = useState(1);
+
+   useEffect(() => {
+
+    if(service.errand == false && service.homeCleaning == false && service.laundry == false){
+        setStatus({percentage: 0,status:false})
+    }else{
+        setStatus({percentage: 0,status:true})
+    }
+
+  },[service.errand,service.homeCleaning,service.laundry])
+
+
 
   return (
     <div className="relative overflow-hidden">
@@ -213,7 +225,7 @@ const Dashboard = () => {
 
 
       <form className="my-12 py-12 grey-3-bg">
-        <div className="container mx-auto  py-5 rounded-3xl relative grid grid-cols-1 md:grid-cols-2 md:gap-x-10">
+        <div className="container mx-auto services  py-5 rounded-3xl relative grid grid-cols-1 md:grid-cols-2 md:gap-x-10">
 
               <div>
                   <h1 className="blue-2 font-semibold leading-tight mb-4 text-[36px] ">Convenience and Quality on <br /> your Budget</h1>
@@ -232,37 +244,47 @@ const Dashboard = () => {
                   </div>
 
                   <div className="mt-5">
-                      <p className="font-semibold my-3">Select preferred service</p>
+                      <p className="font-semibold my-3">Select preferred service </p>
 
                       {page == 1 ? <>
-                      <div className={`card flex items-center rounded-3xl my-3 ${service > 0 ? 'grey-6-bg' : 'bg-white'} `}>
-                          <label htmlFor={'laundry'} className="cursor-pointer min-w-[20px] h-[20px] rounded border bg-white border-blue-900 flex justify-center items-center"> {service > 0 && <i className="fas fa-check text-[10px] text-blue-900"></i>}</label>
+                      <div className={`card  flex items-center rounded-3xl my-3 ${service.laundry ? 'grey-6-bg' : 'bg-white'}`}>
 
-                          <input type="checkbox"  id="laundry" onChange={(e) => {setService(service == 1 ? 0 : 1);setStatus(service == 1 ? {percentage:0,status:false} : {percentage:50,status:true})}}  hidden/>                          
+                      <input type="checkbox"  id="laundry" onChange={(e) => setService({...service,laundry:!service.laundry})}  hidden/>  
+
+                          <label htmlFor={'laundry'} className="cursor-pointer min-w-[20px] h-[20px] rounded border bg-white border-blue-900 flex justify-center items-center"> {service.laundry && <i className="fas fa-check text-[10px] text-blue-900"></i>} </label>
+
+                                                  
                           <div className="ml-4">
-                              <h3 className={`font-semibold ${service > 0 && 'blue-2'}`}>Laundry</h3>
+                              <h3 className={`font-semibold ${service.laundry && 'blue-2'}`}>Laundry</h3>
                               <p>Lorem ipsum dolor sit amet, consec adipiscing elit.</p>
                           </div>
                       </div>
 
-                       <div className={`card flex items-center rounded-3xl my-3 ${service > 1 ? 'grey-6-bg' : 'bg-white'} `}>
-                          <label htmlFor={'home-cleaning'} className="cursor-pointer min-w-[20px] h-[20px] rounded border bg-white border-blue-900 flex justify-center items-center"> {service > 1 && <i className="fas fa-check text-[10px] text-blue-900"></i>}</label>
+                       <div className={`card  flex items-center rounded-3xl my-3 ${service.homeCleaning ? 'grey-6-bg' : 'bg-white'}`}>
 
-                          <input type="checkbox"  id="home-cleaning" onChange={(e) => {setService(service == 2 ? 1 : 2);setStatus(service == 2 ? {percentage:0,status:false} : {percentage:50,status:true})} }  hidden/> 
+                           <input type="checkbox"  id="home-cleaning" onChange={(e) => setService({...service,homeCleaning:!service.homeCleaning}) }  hidden/> 
+
+
+                          <label htmlFor={'home-cleaning'} className="cursor-pointer min-w-[20px] h-[20px] rounded border bg-white border-blue-900 flex justify-center items-center"> {service.homeCleaning && <i className="fas fa-check text-[10px] text-blue-900"></i>}</label>
+
+                      
 
                           <div className="ml-4">
-                              <h3 className={`font-semibold ${service > 1 && 'blue-2'}`}>Home Cleaning</h3>
+                              <h3 className={`font-semibold ${service.homeCleaning && 'blue-2'}`}>Home Cleaning</h3>
                               <p>Lorem ipsum dolor sit amet, consec adipiscing elit.</p>
                           </div>
                       </div>
 
-                        <div className={`card flex items-center rounded-3xl my-3 ${service > 2 ? 'grey-6-bg' : 'bg-white'} `}>
-                          <label htmlFor={'errand'} className="cursor-pointer min-w-[20px] h-[20px] rounded border bg-white border-blue-900 flex justify-center items-center"> {service > 2 && <i className="fas fa-check text-[10px] text-blue-900"></i>}</label>
+                        <div className={`card  flex items-center rounded-3xl my-3 ${service.errand ? 'grey-6-bg' : 'bg-white'} `}>
 
-                          <input type="checkbox"  id="errand" onChange={(e) => {setService(service == 3 ? 2 : 3); setStatus(service == 3 ? {percentage:0,status:false} : {percentage:50,status: true})}}  hidden/> 
+                         <input type="checkbox"  id="errand" onChange={(e) => setService({...service,errand:!service.errand}) }  hidden/> 
+
+                          <label htmlFor={'errand'} className="cursor-pointer min-w-[20px] h-[20px] rounded border bg-white border-blue-900 flex justify-center items-center">  {service.errand && <i className="fas fa-check text-[10px] text-blue-900"></i>}</label>
+
+                         
 
                           <div className="ml-4">
-                              <h3 className={`font-semibold ${service > 2 && 'blue-2'}`}>Errand {page}</h3>
+                              <h3 className={`font-semibold ${service.errand && 'blue-2'}`}>Errand </h3>
                               <p>Lorem ipsum dolor sit amet, consec adipiscing elit.</p>
                           </div>
                       </div>
@@ -355,7 +377,7 @@ const Dashboard = () => {
                         {page > 1 && <button type="button" className="blue-2-bg text-white rounded py-2 px-6" onClick={() => {setPage(--page); setStatus({percentage:50,status:true})}}>Back</button>}
 
                         {status.status == true &&
-                          <button type="button" className="blue-2-bg text-white rounded py-2 px-6 " onClick={() => {setPage(++page); setStatus({...status,status:!status.status})}}>{page == 1 ? 'Next' : 'Finish'}</button>}
+                          <button type="button" className="blue-2-bg text-white rounded py-2 px-6 " onClick={() => {setPage(++page); setStatus({percentage:status.percentage + 50,status:!status.status})}}>{page == 1 ? 'Next' : 'Finish'}</button>}
 
                       </div>
 
